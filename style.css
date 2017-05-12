@@ -124,6 +124,13 @@ body {
     margin-bottom: 30px;
 
     text-align: center;
+    cursor: pointer;
+}
+
+.current-section {
+    color: #2ecc71;
+    border-bottom: 4px solid #2ecc71 !important;
+    padding-bottom: 27px !important;
 }
 
 .content {
@@ -131,16 +138,18 @@ body {
     justify-content: center;
     align-self: center;
 
-    height: 1000px;
+    height: auto;
     width: 1200px;
-
+    margin-bottom: 50px;
 }
 
 .content__left-column,
 .content__right-column {
-    width: 50%;
+    width: 600px;
     border: 1px solid #eaecef;
     border-bottom: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .content__left-column {
@@ -154,8 +163,7 @@ body {
     display: flex;
     flex-flow: column;
     padding: 30px 40px 0;
-
-    /*background-color: palegoldenrod;*/
+    border-bottom: 1px solid #eaecef;
 }
 
 .quest-block__info-bar {
@@ -167,17 +175,38 @@ body {
 }
 
 .info-bar__subscr-counter {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #2ecc71;
     border: #2ecc71 solid 2px;
-    border-radius: 25px;
+    border-radius: 15px;
     font-size: 16px;
-
 
     width: 54px;
     height: 26px;
+    z-index: 5;
+}
+
+.info-bar__subscr-button {
+    display: none;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+    position: absolute;
+    left: 20%;
+    top: -2px;
+    opacity: 0.6;
+    z-index: 2;
+
+
+    width: 134px;
+    height: 30px;
+    background-color: #2ecc71;
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 15px;
 }
 
 .info-bar__date-theme {
@@ -202,8 +231,8 @@ body {
     font-weight: normal;
     font-size: 28px;
 
-    width: 520px;
-    height: 60px;
+    width: 500px;
+    height: auto;
     margin: 30px 0 10px;
 }
 
@@ -215,9 +244,17 @@ body {
     margin-bottom: 0;
 }
 
-.who-answers__total {
+.who-answers__total,
+.who-answers__reply{
     font-weight: bold;
     color: #7f8c8d;
+}
+
+.who-answers__reply {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
 }
 
 
@@ -225,17 +262,14 @@ body {
     position: relative;
     margin-top: 34px;
     margin-bottom: 0;
-    border-bottom: 1px solid #eaecef;
 }
 
 .answer-block {
-    /*height: 160px;*/
     width: 500px;
     list-style: none;
     word-wrap: break-word;
     padding-left: 22px;
 
-    /*background-color: lightcyan;*/
     margin-bottom: 30px;
     padding-bottom: 0;
 }
@@ -274,14 +308,6 @@ body {
     margin-right: 10px;
 }
 
-.userpic-yashina {
-    background: url('images/userpics/o-yashina.png');
-}
-
-.userpic-vasilchenko {
-    background: url('images/userpics/v-vasilchenko.png');
-}
-
 .pers-info__who {
 }
 
@@ -303,6 +329,39 @@ body {
 
 
 
+
+
+.userpic-yashina {
+    background: url('images/userpics/o-yashina.png');
+}
+
+.userpic-vasilchenko {
+    background: url('images/userpics/v-vasilchenko.png');
+}
+
+.userpic-neyaskin {
+    background: url('images/userpics/g-neyaskin.png');
+}
+
+.userpic-lebedev {
+    background: url('images/userpics/a-lebedev.png');
+}
+
+.userpic-andreev {
+    background: url('images/userpics/a-andreev.png');
+}
+
+.userpic-zhitsky {
+    background: url('images/userpics/s-zhitsky.png');
+}
+
+.userpic-sergeev {
+    background: url('images/userpics/d-sergeev.png');
+}
+
+.userpic-dann {
+    background: url('images/userpics/d-dann.png');
+}
 
 @font-face {
     font-family: "GregorRegular";

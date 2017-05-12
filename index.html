@@ -13,7 +13,6 @@
             <div class="logo"></div>
             <form class="search-form" action="" method="post" >
                 <input type="search" name="" placeholder="Найти ответ..." class="search-form__input" />
-                <!--<input type="submit" name="" value="" class="search-form__submit" />-->
             </form>
             <div class="question-button"><span class="question-button__quest">?</span><span>Задать<br>вопрос</span></div>
             <div class="profile-info">
@@ -26,16 +25,18 @@
         <div class="main">
 
             <nav class="navigation">
-                <div class="navigation__actual">Актуальные</div>
+                <div class="navigation__actual current-section">Актуальные</div>
                 <div class="navigation__new">Новые</div>
                 <div class="navigation__discussed">Обсуждаемые</div>
             </nav>
 
             <div class="content">
                 <div class="content__left-column">
-                    <div class="quest-block">
+                    <div class="quest-block lc__quest-block-1">
                         <div class="quest-block__info-bar">
-                            <div class="info-bar__subscr-counter">2,3K</div>
+                            <div class="info-bar__subscr-counter">2,3K
+                                <div class="info-bar__subscr-button">Подписаться</div>
+                            </div>
                             <div class="info-bar__date-theme"><span class="info-bar__date">27 сен</span> <span class="info-bar__theme">ЭКОНОМИКА</span> </div>
                         </div>
 
@@ -68,13 +69,144 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="quest-block lc__quest-block-2">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">1,9K</div>
+                            <div class="info-bar__date-theme"><span class="info-bar__date">13 авг</span> <span class="info-bar__theme">ЭКОНОМИКА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Что происходит с рублем?</h1>
+                        <div class="quest-block__who-answers"><span class="who-answers__total">26 ответов</span> • <span class="who-answers__names">Отвечают:
+                            Георгий Неяскин, Кирилл Горин, Елена Вороненко, Джон Николсон, Дмитрий Долгов, Александр Панфилов</span></div>
+                        <ul class="ans-area">
+                            <li class="answer-block">
+                                <div class="answer-block__text">Дешевеющая нефть. В течение последнего года курсы рубля
+                                    и стоимость барреля были связаны не так сильно, как наблюдалась до этого. Нефть
+                                    сейчас вроде бы дороже, чем в годы кризиса, но рубль при этом слабее...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-neyaskin"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Георгий Неяскин</span><span class="pers-info__rating">7.6</span></div>
+                                        <div class="pers-info__who-role">Зам. президента ассоциации Российских банков</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="quest-block lc__quest-block-3">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">1,9K</div>
+                            <div class="info-bar__date-theme"><span class="info-bar__date">13 авг</span> <span class="info-bar__theme">ЕДА</span> </div>
+                        </div>
+                        <h1 class="quest-block__header">Что известно о кофе?</h1>
+                        <div class="quest-block__who-answers">
+                            <span class="who-answers__names">Нет ответов</span>
+                            <span class="who-answers__reply">Ответить</span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="content__right-column"></div>
+
+                <div class="content__right-column">
+                    <div class="quest-block rc__quest-block-1">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">2,1K</div>
+                            <div class="info-bar__date-theme"><span class="info-bar__date">3 июн</span> <span class="info-bar__theme">БИЗНЕС</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Правда ли, что за логотип Москвы <br>и метро
+                            студия Лебедева получила <br>117 млн р.?</h1>
+                        <div class="quest-block__who-answers">
+                            <span class="who-answers__total">6 ответов</span> •
+                            <span class="who-answers__names">Отвечают: Артемий Лебедев, Алексей Андреев,
+                                Стас Жицкий, Даниил Сергеев, Алексей Аметов, Роман Любимов</span>
+                        </div>
+
+                        <ul class="ans-area">
+                            <li class="answer-block">
+                                <div class="answer-block__text">Идите на**й.</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-lebedev"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Артемий Лебедев</span><span class="pers-info__rating">0.0</span></div>
+                                        <div class="pers-info__who-role">Худрук Студии Лебедева</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Средняя стоимость разработки платформы бренда
+                                    и позиционирования — от 500 тысяч до 2 000 000 рублей, дизайна — около миллиона,
+                                    всевозможных его расширений и адаптаций — еще миллиона полтора-два. Итого средний
+                                    проект по ребрендингу стоит около трех с половиной — четырех миллионов...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-andreev"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Алексей Андреев</span><span class="pers-info__rating">5.2</span></div>
+                                        <div class="pers-info__who-role">Генеральный директор Depot WPF, сопрезидент АБКР</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Мне кажется, нам как потребителям этой самой буквы
+                                    лучше стоит думать о том, что она какое-никакое удобство привносит в нашу городскую
+                                    среду, а не о том, насколько страшно обогатился Артемий Лебедев...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-zhitsky"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name"></span>Стас Жицкий<span class="pers-info__rating">6.9</span></div>
+                                        <div class="pers-info__who-role">OPEN!Design</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Это просто рассуждения дилетантов.
+                                    С таким же смыслом я могу говорить о бозоне Хиггса — это никак науке не поможет....</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-sergeev"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Даниил Сергеев</span><span class="pers-info__rating">7.8</span></div>
+                                        <div class="pers-info__who-role">Куратор FIRMA</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="quest-block rc__quest-block-2">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">1,2K</div>
+                            <div class="info-bar__date-theme"><span class="info-bar__date">3 июн</span> <span class="info-bar__theme">ЛИТЕРАТУРА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Были ли подвержены творческим кризисам Пушкин или Толстой?</h1>
+                        <div class="quest-block__who-answers">
+                            <span class="who-answers__total">3 ответа</span> •
+                            <span class="who-answers__names">Отвечают: Доминик Данн, Рэй Бредбери, Елена Вороненко</span>
+                        </div>
+
+                        <ul class="ans-area">
+                            <li class="answer-block">
+                                <div class="answer-block__text">Думаю, вести дневник — самое лучшее для писателя…
+                                    Особенно бесценным окажется журнал при творческом тупике. Записывайте туда
+                                    жалобы самому себе на творческий кризис. Рассказывайте, как плохо...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-dann"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Доминик Данн</span><span class="pers-info__rating">7.6</span></div>
+                                        <div class="pers-info__who-role">Писатель</div>
+                                    </div>
+                                </div>
+                            </li>
+                </div>
 
             </div>
-        </div>
 
     </div>
 </body>
 </html>
- No newline at end of file
