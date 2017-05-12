@@ -12,14 +12,12 @@ body {
     height: 100px;
     width: 1440px;
     border-bottom: 1px solid #eaecef;
-    /*background-color: antiquewhite;*/
 }
 
 
 .header > div,
 .header > form{
     display: flex;
-    /*border-right: 1px solid grey;*/
 }
 
 .main-menu {
@@ -40,7 +38,7 @@ body {
 .search-form {
     width: 700px;
     background: url('images/search-icon.png') 20px 50%/50px no-repeat;
-    padding-left: 80px;
+    padding-left: 85px;
     color: #bdc3c7;
 }
 
@@ -49,7 +47,8 @@ body {
     border: none;
     outline: none;
     height: 100%;
-    font-size: 20px;
+    font-size: 19px;
+    font-family: "Museo-Sans-Cyr", sans-serif;
 }
 
 .question-button {
@@ -60,8 +59,8 @@ body {
 
     background-color: #283d51;
     color: white;
-    font-family: "Arial", sans-serif;
-    font-size: 14px;
+    font-family: "Museo-Sans-Cyr", sans-serif;
+    font-size: 15px;
 }
 
 
@@ -73,19 +72,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 250px;
 }
 
 .profile-info__userpic {
-    height: 90px;
-    width: 90px;
-    background: #ffffff url('images/userpic.jpg') -15px 35%/120px no-repeat;
+    height: 80px;
+    width: 80px;
+    background: #ffffff url('images/userpic.jpg') -25px 20%/120px no-repeat;
     border-radius: 60px;
 }
 
 .profile-info__rating {
     padding-left: 20px;
+    font-family: "Museo-Sans-Cyr", sans-serif;
+
 }
 
 .rating-text {
@@ -95,7 +95,7 @@ body {
 
 .rating-number {
     color: #2ecc71;
-    font-size: 32px;
+    font-size: 34px;
 }
 
 .main {
@@ -107,19 +107,23 @@ body {
 .navigation {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
-    height: 140px;
+    height: 130px;
     color: #bdc3c7;
+
+    font-size: 19px;
+    font-family: "Museo-Sans-Cyr", sans-serif;
 }
 
 .navigation > div {
-    width: 140px;
+    min-width: 120px;
+    width: auto;
     border-bottom: 1px solid #eaecef;
-    padding: 20px;
-    text-align: center;
+    padding: 0 30px 30px;
+    margin-bottom: 30px;
 
-    font-size: 20px;
+    text-align: center;
 }
 
 .content {
@@ -140,38 +144,45 @@ body {
 }
 
 .content__left-column {
-    /*background-color: palegreen;*/
     border-right: none;
 }
 
 .content__right-column {
-    /*background-color: palegoldenrod;*/
 }
 
 .quest-block {
     display: flex;
     flex-flow: column;
-    padding: 40px;
+    padding: 30px 40px 0;
+
+    /*background-color: palegoldenrod;*/
 }
 
 .quest-block__info-bar {
     display: flex;
     justify-content: space-between;
-    background-color: powderblue;
     align-items: center;
+
+    height: 30px;
 }
 
-.info-bar__upvotes {
+.info-bar__subscr-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #2ecc71;
     border: #2ecc71 solid 2px;
-    padding: 5px 8px;
-    border-radius: 20px;
+    border-radius: 25px;
+    font-size: 16px;
+
+
+    width: 54px;
+    height: 26px;
 }
 
 .info-bar__date-theme {
     display: flex;
-    font-size: 14px;
-
+    font-size: 12px;
 }
 
 .info-bar__date {
@@ -186,16 +197,22 @@ body {
 
 
 .quest-block__header {
-    font-family: "Times New Roman", serif;
+    font-family: "GregorRegular", serif;
     color: #34495e;
     font-weight: normal;
+    font-size: 28px;
 
+    width: 520px;
+    height: 60px;
+    margin: 30px 0 10px;
 }
 
 
 .quest-block__who-answers {
-    font-size: 14px;
+    font-family: "Museo-Sans-Cyr", sans-serif ;
+    font-size: 13px;
     color: #c2c8cb;
+    margin-bottom: 0;
 }
 
 .who-answers__total {
@@ -203,10 +220,103 @@ body {
     color: #7f8c8d;
 }
 
-.answer-block__text {
-    padding-top: 30px;
-    font-family: "Times New Roman", serif;
-    color: #7f8c8d;
-    font-size: 20px;
+
+.ans-area {
+    position: relative;
+    margin-top: 34px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #eaecef;
 }
- No newline at end of file
+
+.answer-block {
+    /*height: 160px;*/
+    width: 500px;
+    list-style: none;
+    word-wrap: break-word;
+    padding-left: 22px;
+
+    /*background-color: lightcyan;*/
+    margin-bottom: 30px;
+    padding-bottom: 0;
+}
+
+
+.answer-block:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    padding-left: 18px;
+}
+
+.answer-block__text {
+    font-family: "GregorRegular", serif;
+    color: #7f8c8d;
+    font-size: 18px;
+    width: 440px;
+
+    margin-left: -15px;
+}
+
+.answer-block__pers-info {
+    background: 0 0/40px no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 400px;
+    margin-left: -15px;
+    margin-top: 10px;
+}
+
+.pers-info__userpic {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.userpic-yashina {
+    background: url('images/userpics/o-yashina.png');
+}
+
+.userpic-vasilchenko {
+    background: url('images/userpics/v-vasilchenko.png');
+}
+
+.pers-info__who {
+}
+
+.pers-info__name {
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+.pers-info__rating {
+    font-size: 16px;
+    color: #2ecc71;
+    margin-left: 10px;
+}
+
+.pers-info__who-role {
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+
+
+
+@font-face {
+    font-family: "GregorRegular";
+    src: url("/fonts/GregorRegular/GregorRegular.eot");
+    src: url("/fonts/GregorRegular/GregorRegular.eot?#iefix")format("embedded-opentype"),
+    url("/fonts/GregorRegular/GregorRegular.woff") format("woff"),
+    url("/fonts/GregorRegular/GregorRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Museo-Sans-Cyr";
+    src: url("/fonts/Museo-Sans-Cyr/MuseoSansCyrl_1.otf");
+    font-style: normal;
+    font-weight: normal;
+}
