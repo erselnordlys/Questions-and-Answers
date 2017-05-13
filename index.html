@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -25,9 +26,9 @@
         <div class="main">
 
             <nav class="navigation">
-                <div class="navigation__actual current-section">Актуальные</div>
-                <div class="navigation__new">Новые</div>
-                <div class="navigation__discussed">Обсуждаемые</div>
+                <div class="nav-btn navigation__actual current-section">Актуальные</div>
+                <div class="nav-btn navigation__new">Новые</div>
+                <div class="nav-btn navigation__discussed">Обсуждаемые</div>
             </nav>
 
             <div class="content">
@@ -41,12 +42,14 @@
                         </div>
 
                         <h1 class="quest-block__header">Почему ЦБ отозвал лицензию <br>у Московского "Банк 24.ру"?</h1>
-                        <div class="quest-block__who-answers"><span class="who-answers__total">42 ответа</span> • <span class="who-answers__names">Отвечают: Оксана Ящина, Виталий Васильченко
+                        <div class="quest-block__who-answers"><span class="who-answers__total">42 ответа </span> • <span class="who-answers__names"> Отвечают: Оксана Ящина, Виталий Васильченко,
                         Анатолий Онопченко, Михаил Варагин, Павел Пещеряков, Мария Логинова</span></div>
                         <ul class="ans-area">
-                            <li class="answer-block">
+                            <li class="answer-block" id="lc__q1-ans1" onmouseover="addHoverLayer()" onmouseout="removeHoverLayer()">
+
                                 <div class="answer-block__text">Начнем с того, что надзор в банковской сфере был ужесточен после прихода на пост
                                 председателя ЦБ Эльвиры Набиуллиной в июне 2013 года. За год лицензий лишились более 60 банков, в том числе такие крупные, как Мастер-Банк...</div>
+
                                 <div class="answer-block__pers-info">
                                     <div class="pers-info__userpic userpic-yashina"></div>
                                     <div class="pers-info__who">
@@ -205,8 +208,113 @@
                             </li>
                 </div>
 
+                </div>
+            </div>
+                <!--<div class="hovered-answer" id="hovered-answer">-->
+                    <!--<span class="hovered-answer__text">Читать полный ответ</span>-->
+                    <!--<div class="hovered-answer__arrow"></div>-->
+                <!--</div>-->
+
+            <div class="pop-up-wrapper">
+                <div class="pop-up-page">
+                    <div class="pop-up__close-icon"></div>
+
+                    <div class="pop-up__question-area">
+
+                        <div class="pop-up__author question-area__author">
+                            <div class="pop-up__userpic userpic-konstantinopolsky"></div>
+                            <div class="pop-up__authors-name">Константин Константинопольский</div>
+                            <div class="pers-info__who-role pop-up__authors-role">Журналист, блогер</div>
+                            <div class="pop-up__authors-rating">3.9</div>
+                        </div>
+
+                        <div class="question-area__question-card question-card">
+                            <div class="question-card__info-bar info-bar">
+                                <div class="info-bar__subscr-counter">2,3K
+                                    <div class="info-bar__subscr-button">Подписаться</div>
+                                </div>
+                            <div class="info-bar__date-theme"><span class="info-bar__date">27 сен</span> <span class="info-bar__theme">ЭКОНОМИКА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Почему ЦБ отозвал лицензию <br>у Московского "Банк 24.ру"?</h1>
+                        <div class="quest-block__who-answers"><span class="who-answers__total">42 ответа</span> • <span class="who-answers__names">Отвечают: Оксана Ящина, Виталий Васильченко
+                        Анатолий Онопченко, Михаил Варагин, Павел Пещеряков, Мария Логинова</span></div>
+
+                            <div class="pop-up__question-text">Центральный банк России отозвал лицензию на осуществление
+                                банковских операций у московского «Банк24.ру», сообщается в пресс-релизе ЦБ.<br> <br>
+                                Говорят, банк не соблюдал требования законодательства в области противодействия
+                                легализации (отмыванию) доходов, полученных преступным путем, и финансированию терроризма.<br><br>
+                                Что об этом думают эксперты?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pop-up__filter navigation">
+                        <div>Сначала</div>
+                        <div class="filter__best nav-btn current-section">лучшие</div>
+                        <div class="filter__last nav-btn">последние</div>
+                    </div>
+
+                    <div class="pop-up__answer-area ans-1">
+
+                        <div class="pop-up__author answer-area__author">
+                                <div class="pop-up__userpic userpic-yashina"></div>
+                                <div class="pop-up__authors-name">Ольга Ящина</div>
+                                <div class="pers-info__who-role pop-up__authors-role">Главный аналитик, РБК</div>
+                                <div class="pop-up__authors-rating">7.6</div>
+                        </div>
+
+                        <div class="answer-area__answer-card answer-card">
+                            <div class="answer-card__info-bar info-bar">
+                                <div class="info-bar__subscr-counter">2,3K
+                                    <div class="info-bar__subscr-button">Проголосовать</div>
+                                </div>
+                                <div class="info-bar__date">Сегодня, 16:48</div>
+                            </div>
+                            <div class="pop-up__answer-text">К сожалению, у меня нет возможности ответить Вам на канале
+                                «Россия 24», просто потому, что людей с моей точкой зрения на такие каналы не пускают.
+                                Там показывают только тех, кто разделяет Вашу позицию. Видимо, поэтому Вам и приходится
+                                общаться с экраном, а не с живым Макаревичем, Собчак или кем-то другим в студии.<br><br>
+                                При этом мое приглашение встретиться с Вами в прямом эфире моей программы «Собчак живьем»
+                                остается в силе. Я знаю, что Вы человек в себе уверенный, и мы вполне могли бы поговорить
+                                уже в режиме живой беседы, а не актерского монолога. Но пока — пишу Вам ответ здесь.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pop-up__answer-area ans-2">
+
+                        <div class="pop-up__author answer-area__author">
+                            <div class="pop-up__userpic userpic-vasilchenko"></div>
+                            <div class="pop-up__authors-name">Вталий Васильченко</div>
+                            <div class="pers-info__who-role pop-up__authors-role">Главред «Деловая среда»</div>
+                            <div class="pop-up__authors-rating">7.6</div>
+                            <div class="pop-up__subscr-button">Подписаться</div>
+
+                        </div>
+
+                        <div class="answer-area__answer-card answer-card">
+                            <div class="answer-card__info-bar info-bar">
+                                <div class="info-bar__subscr-counter">2,3K
+                                </div>
+                                <div class="info-bar__date">Вт, 9:03</div>
+                            </div>
+                            <div class="pop-up__answer-text">К сожалению, у меня нет возможности ответить Вам на канале
+                                «Россия 24», просто потому, что людей с моей точкой зрения на такие каналы не пускают.
+                                Там показывают только тех, кто разделяет Вашу позицию. Видимо, поэтому Вам и приходится
+                                общаться с экраном, а не с живым Макаревичем, Собчак или кем-то другим в студии.<br><br>
+                                При этом мое приглашение встретиться с Вами в прямом эфире моей программы «Собчак живьем»
+                                остается в силе. Я знаю, что Вы человек в себе уверенный, и мы вполне могли бы поговорить
+                                уже в режиме живой беседы, а не актерского монолога. Но пока — пишу Вам ответ здесь.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
+
+        </div>
     </div>
 </body>
 </html>

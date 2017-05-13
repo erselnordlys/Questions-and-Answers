@@ -48,6 +48,7 @@ body {
     outline: none;
     height: 100%;
     font-size: 19px;
+    line-height: 28px;
     font-family: "Museo-Sans-Cyr", sans-serif;
 }
 
@@ -61,11 +62,12 @@ body {
     color: white;
     font-family: "Museo-Sans-Cyr", sans-serif;
     font-size: 15px;
+    line-height: 17px;
 }
-
 
 .question-button__quest {
     font-size: 30px;
+    line-height: 28px;
 }
 
 .profile-info {
@@ -102,6 +104,7 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    position: relative;
 }
 
 .navigation {
@@ -113,10 +116,11 @@ body {
     color: #bdc3c7;
 
     font-size: 19px;
+    line-height: 28px;
     font-family: "Museo-Sans-Cyr", sans-serif;
 }
 
-.navigation > div {
+.nav-btn {
     min-width: 120px;
     width: auto;
     border-bottom: 1px solid #eaecef;
@@ -130,7 +134,7 @@ body {
 .current-section {
     color: #2ecc71;
     border-bottom: 4px solid #2ecc71 !important;
-    padding-bottom: 27px !important;
+    padding-bottom: 26px !important;
 }
 
 .content {
@@ -166,7 +170,8 @@ body {
     border-bottom: 1px solid #eaecef;
 }
 
-.quest-block__info-bar {
+.quest-block__info-bar,
+.info-bar{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -183,10 +188,10 @@ body {
     border: #2ecc71 solid 2px;
     border-radius: 15px;
     font-size: 16px;
+    line-height: 28px;
 
     width: 54px;
     height: 26px;
-    z-index: 5;
 }
 
 .info-bar__subscr-button {
@@ -197,10 +202,6 @@ body {
     position: absolute;
     left: 20%;
     top: -2px;
-    opacity: 0.6;
-    z-index: 2;
-
-
     width: 134px;
     height: 30px;
     background-color: #2ecc71;
@@ -215,33 +216,36 @@ body {
 }
 
 .info-bar__date {
-    margin-right: 20px;
+    font-size: 12px;
+    line-height: 14px;
     color: #c2c8cb;
 }
 
 .info-bar__theme {
     margin-right: 20px;
+    margin-left: 20px;
     color: #2ecc71;
 }
-
 
 .quest-block__header {
     font-family: "GregorRegular", serif;
     color: #34495e;
     font-weight: normal;
     font-size: 28px;
+    line-height: 30px;
 
     width: 500px;
     height: auto;
     margin: 30px 0 10px;
 }
 
-
 .quest-block__who-answers {
     font-family: "Museo-Sans-Cyr", sans-serif ;
     font-size: 13px;
+    line-height: 15px;
     color: #c2c8cb;
     margin-bottom: 0;
+    width: 510px;
 }
 
 .who-answers__total,
@@ -255,25 +259,32 @@ body {
     align-items: center;
     justify-content: center;
     margin: 50px 0;
+    line-height: 14px;
 }
-
 
 .ans-area {
     position: relative;
-    margin-top: 34px;
+    margin-top: 20px;
     margin-bottom: 0;
 }
 
 .answer-block {
-    width: 500px;
+    width: 600px;
     list-style: none;
     word-wrap: break-word;
-    padding-left: 22px;
+    margin-left: -80px;
 
-    margin-bottom: 30px;
-    padding-bottom: 0;
+    padding-bottom: 17px;
+    padding-top: 17px;
 }
 
+.answer-block:hover {
+    height: auto;
+    /*position: absolute;*/
+    width: 600px;
+    background-color: #f5f7f8;
+    cursor: pointer;
+}
 
 .answer-block:before {
     content: "—";
@@ -285,10 +296,13 @@ body {
 .answer-block__text {
     font-family: "GregorRegular", serif;
     color: #7f8c8d;
-    font-size: 18px;
-    width: 440px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+    width: 480px;
 
-    margin-left: -15px;
+    margin-left: 80px;
+
 }
 
 .answer-block__pers-info {
@@ -298,8 +312,8 @@ body {
     align-items: center;
 
     width: 400px;
-    margin-left: -15px;
     margin-top: 10px;
+    padding-left: 80px;
 }
 
 .pers-info__userpic {
@@ -313,18 +327,211 @@ body {
 
 .pers-info__name {
     font-size: 14px;
+    line-height: 22px;
     color: #95a5a6;
+    margin-right: 10px;
+
 }
 
 .pers-info__rating {
     font-size: 16px;
+    line-height: 22px;
     color: #2ecc71;
-    margin-left: 10px;
 }
 
 .pers-info__who-role {
     font-size: 12px;
+    line-height: 14px;
     color: #bdc3c7;
+}
+
+.hovered-answer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 600px;
+    background-color: indianred;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.hovered-answer__text {
+    color: #2ecc71;
+    font-size: 12px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+}
+
+.hovered-answer__arrow {
+    background:  url('images/arrow.png') 0 50%/120% no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+
+    height: 60px;
+    width: 60px;
+    z-index: 10;
+}
+
+
+/*POP-UP SECTION */
+
+.pop-up-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: #f4f5f6;
+    top: 0;
+
+    position: absolute;
+    z-index: 3;
+}
+
+.pop-up-page {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    margin: 100px 100px 75px;
+
+    background-color: #fff;
+}
+
+.pop-up__close-icon {
+    background-image: url("images/close-icon.png");
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 28px;
+    height: 28px;
+    z-index: 19;
+}
+
+.pop-up__question-area,
+.pop-up__answer-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pop-up__author{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-left: 100px;
+    margin-top: 170px;
+    width: 200px;
+    height: 235px;
+
+    padding-left: 10px;
+}
+
+.pop-up__userpic {
+    height: 80px;
+    width: 80px;
+}
+
+.pop-up__authors-name {
+    padding-top: 10px;
+    line-height: 22px;
+    font-size: 16px;
+    color: #95a5a6;
+
+}
+
+.pop-up__authors-role {
+    margin-top: 10px;
+}
+
+.pop-up__authors-rating {
+    font-size: 21px;
+    line-height: 21px;
+    color: #2ecc71;
+    margin-top: 15px;
+}
+
+.pop-up__subscr-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    border-radius: 15px;
+    background-color: #2ecc71;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 20px;
+}
+
+
+.question-area__author {
+    margin-top: 200px;
+}
+
+.question-card,
+.answer-card{
+    margin-top: 110px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 700px;
+    height: 100%;
+}
+
+.question-card {
+    margin-top: 140px;
+}
+
+.pop-up-page .quest-block__header {
+    font-size: 42px;
+    line-height: 50px;
+    width: 700px;
+    margin-bottom: 20px;
+}
+
+.pop-up-page .quest-block__who-answers {
+    width: 600px;
+    line-height: 20px;
+}
+
+.pop-up__question-text,
+.pop-up__answer-text{
+    width: 700px;
+    font-size: 23px;
+    font-family: "GregorRegular", serif;
+    color: #34495e;
+    line-height: 35px;
+
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.pop-up__answer-text {
+    margin-top: 30px;
+}
+
+.pop-up__filter {
+    margin-top: 20px;
+    height: 100px;
+}
+
+.pop-up__filter > div {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pop-up__answer-area{
+    border-top: 1px solid #f4f5f6;
+    width: 100%;
 }
 
 
@@ -361,6 +568,10 @@ body {
 
 .userpic-dann {
     background: url('images/userpics/d-dann.png');
+}
+
+.userpic-konstantinopolsky {
+    background: url('images/userpics/k-konstantinopolsky.png');
 }
 
 @font-face {
