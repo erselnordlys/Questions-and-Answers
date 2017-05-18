@@ -262,6 +262,11 @@ body {
     line-height: 14px;
 }
 
+.who-answers__reply:hover {
+    color: #bdc3c7;
+    cursor: pointer;
+}
+
 .ans-area {
     position: relative;
     margin-top: 20px;
@@ -269,6 +274,8 @@ body {
 }
 
 .answer-block {
+    position: relative;
+
     width: 600px;
     list-style: none;
     word-wrap: break-word;
@@ -278,19 +285,12 @@ body {
     padding-top: 17px;
 }
 
-.answer-block:hover {
-    height: auto;
-    /*position: absolute;*/
-    width: 600px;
-    background-color: #f5f7f8;
-    cursor: pointer;
-}
 
-.answer-block:before {
+.answer-block__text:before {
     content: "—";
     position: absolute;
     left: 0;
-    padding-left: 18px;
+    padding-left: 58px;
 }
 
 .answer-block__text {
@@ -305,23 +305,74 @@ body {
 
 }
 
+.answer-block:before {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    right: 20px;
+    background: url('images/arrow.png') 0 0/contain no-repeat;
+    height: 40px;
+    width: 10px;
+    content: "";
+}
+
+.answer-block:hover::after,
+.answer-block:hover::before{
+    display: block;
+}
+
+.answer-block:hover {
+    height: auto;
+    width: 600px;
+    background-color: #f5f7f8;
+    cursor: pointer;
+}
+
+
+
 .answer-block__pers-info {
-    background: 0 0/40px no-repeat;
+    /*background: 0 0/40px no-repeat;*/
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /*background-color: darksalmon;*/
 
-    width: 400px;
+    width: 520px;
     margin-top: 10px;
-    padding-left: 80px;
+    margin-left: 80px;
+}
+
+.answer-block:after {
+    display: none;
+    content: "Читать полный ответ";
+    font-size: 12px;
+    line-height: 14px;
+    color: #2ecc71;
+
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    /*background-color: peachpuff;*/
+    /*opacity: 0.6;*/
+    height: auto;
+    /*width: 600px;*/
+}
+
+.answer-block:hover::after {
+    display: block;
 }
 
 .pers-info__userpic {
     height: 40px;
     width: 40px;
     margin-right: 10px;
-}
 
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: contain;
+}
 .pers-info__who {
 }
 
@@ -345,42 +396,10 @@ body {
     color: #bdc3c7;
 }
 
-.hovered-answer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 600px;
-    background-color: indianred;
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-.hovered-answer__text {
-    color: #2ecc71;
-    font-size: 12px;
-    padding-bottom: 20px;
-    padding-right: 40px;
-}
-
-.hovered-answer__arrow {
-    background:  url('images/arrow.png') 0 50%/120% no-repeat;
-    position: absolute;
-    top: 50%;
-    margin-top: -30px;
-
-    height: 60px;
-    width: 60px;
-    z-index: 10;
-}
-
-
 /*POP-UP SECTION */
 
 .pop-up-wrapper {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
@@ -427,8 +446,10 @@ body {
 
     margin-left: 100px;
     margin-top: 170px;
-    width: 200px;
-    height: 235px;
+    width: 210px;
+    min-height: 235px;
+    /*height: auto;*/
+    background-color: lavender;
 
     padding-left: 10px;
 }
@@ -439,7 +460,7 @@ body {
 }
 
 .pop-up__authors-name {
-    padding-top: 10px;
+    margin-top: 15px;
     line-height: 22px;
     font-size: 16px;
     color: #95a5a6;
@@ -539,39 +560,39 @@ body {
 
 
 .userpic-yashina {
-    background: url('images/userpics/o-yashina.png');
+    background-image: url('images/userpics/o-yashina.png');
 }
 
 .userpic-vasilchenko {
-    background: url('images/userpics/v-vasilchenko.png');
+    background-image: url('images/userpics/v-vasilchenko.png');
 }
 
 .userpic-neyaskin {
-    background: url('images/userpics/g-neyaskin.png');
+    background-image: url('images/userpics/g-neyaskin.png');
 }
 
 .userpic-lebedev {
-    background: url('images/userpics/a-lebedev.png');
+    background-image: url('images/userpics/a-lebedev.png');
 }
 
 .userpic-andreev {
-    background: url('images/userpics/a-andreev.png');
+    background-image: url('images/userpics/a-andreev.png');
 }
 
 .userpic-zhitsky {
-    background: url('images/userpics/s-zhitsky.png');
+    background-image: url('images/userpics/s-zhitsky.png');
 }
 
 .userpic-sergeev {
-    background: url('images/userpics/d-sergeev.png');
+    background-image: url('images/userpics/d-sergeev.png');
 }
 
 .userpic-dann {
-    background: url('images/userpics/d-dann.png');
+    background-image: url('images/userpics/d-dann.png');
 }
 
 .userpic-konstantinopolsky {
-    background: url('images/userpics/k-konstantinopolsky.png');
+    background-image: url('images/userpics/k-konstantinopolsky.png');
 }
 
 @font-face {
