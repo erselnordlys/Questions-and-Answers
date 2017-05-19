@@ -21,18 +21,23 @@ body {
 }
 
 .main-menu {
+    display: flex;
+    background: url('images/menu.png') 50% 50%/30px 24px no-repeat;
     width: 100px;
-    transform: rotate(90deg);
     justify-content: center;
     align-items: center;
     font-size: 45px;
     color: #7f8c8d;
+
+    cursor: pointer;
 }
 
 .logo {
     width: 250px;
     background: #283d51 url('images/logo.png');
     background-size: cover;
+
+    cursor: pointer;
 }
 
 .search-form {
@@ -63,6 +68,8 @@ body {
     font-family: "Museo-Sans-Cyr", sans-serif;
     font-size: 15px;
     line-height: 17px;
+
+    cursor: pointer;
 }
 
 .question-button__quest {
@@ -82,6 +89,8 @@ body {
     width: 80px;
     background: #ffffff url('images/userpic.jpg') -25px 20%/120px no-repeat;
     border-radius: 60px;
+
+    cursor: pointer;
 }
 
 .profile-info__rating {
@@ -172,18 +181,42 @@ body {
 
 .quest-block__info-bar,
 .info-bar{
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-
     height: 30px;
 }
 
+.info-bar__subscr-counter:before {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+
+    left: 20%;
+    top: -2px;
+    padding-right: 20px;
+
+    width: 134px;
+    height: 30px;
+    background-color: #2ecc71;
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 15px;
+
+    content: 'Подписаться';
+}
+
 .info-bar__subscr-counter {
-    position: relative;
+    position: absolute;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+
     color: #2ecc71;
     border: #2ecc71 solid 2px;
     border-radius: 15px;
@@ -194,20 +227,21 @@ body {
     height: 26px;
 }
 
-.info-bar__subscr-button {
-    display: none;
-    justify-content: flex-end;
-    padding-right: 20px;
-    align-items: center;
-    position: absolute;
-    left: 20%;
-    top: -2px;
-    width: 134px;
+.info-bar__subscr-counter:after {
+    opacity: 0.5;
+    width: 167px;
     height: 30px;
-    background-color: #2ecc71;
-    color: #ffffff;
-    font-size: 12px;
-    border-radius: 15px;
+
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    z-index: 10;
+    content: "";
+    cursor: pointer;
+}
+
+.info-bar__subscr-counter:hover::before {
+    display: flex;
 }
 
 .info-bar__date-theme {
@@ -225,6 +259,7 @@ body {
     margin-right: 20px;
     margin-left: 20px;
     color: #2ecc71;
+    cursor: pointer;
 }
 
 .quest-block__header {
@@ -274,6 +309,7 @@ body {
 }
 
 .answer-block {
+    display: block;
     position: relative;
 
     width: 600px;
@@ -283,8 +319,8 @@ body {
 
     padding-bottom: 17px;
     padding-top: 17px;
+    transition: background-color linear 0.15s;
 }
-
 
 .answer-block__text:before {
     content: "—";
@@ -302,11 +338,11 @@ body {
     width: 480px;
 
     margin-left: 80px;
-
 }
 
 .answer-block:before {
     display: none;
+    /*visibility: hidden;*/
     position: absolute;
     top: 50%;
     margin-top: -20px;
@@ -315,11 +351,13 @@ body {
     height: 40px;
     width: 10px;
     content: "";
+    transition: all linear 0.1s;
 }
 
 .answer-block:hover::after,
 .answer-block:hover::before{
     display: block;
+    /*visibility: visible;*/
 }
 
 .answer-block:hover {
@@ -329,15 +367,11 @@ body {
     cursor: pointer;
 }
 
-
-
 .answer-block__pers-info {
-    /*background: 0 0/40px no-repeat;*/
     position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /*background-color: darksalmon;*/
 
     width: 520px;
     margin-top: 10px;
@@ -346,6 +380,7 @@ body {
 
 .answer-block:after {
     display: none;
+    /*visibility: hidden;*/
     content: "Читать полный ответ";
     font-size: 12px;
     line-height: 14px;
@@ -354,10 +389,9 @@ body {
     position: absolute;
     right: 40px;
     bottom: 20px;
-    /*background-color: peachpuff;*/
-    /*opacity: 0.6;*/
     height: auto;
-    /*width: 600px;*/
+
+    transition: all linear 0.1s;
 }
 
 .answer-block:hover::after {
