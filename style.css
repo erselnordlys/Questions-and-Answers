@@ -16,7 +16,7 @@ body {
 
 
 .header > div,
-.header > form{
+.header > form {
     display: flex;
 }
 
@@ -42,6 +42,7 @@ body {
 
 .search-form {
     width: 700px;
+    /*min-width: 300px;*/
     background: url('images/search-icon.png') 20px 50%/50px no-repeat;
     padding-left: 85px;
     color: #bdc3c7;
@@ -186,17 +187,19 @@ body {
     justify-content: flex-end;
     align-items: center;
     height: 30px;
+    max-width: 520px;
+
 }
 
-.info-bar__subscr-counter:before {
+.info-bar__subscr-button {
     display: none;
     justify-content: flex-end;
     align-items: center;
     position: absolute;
     z-index: -1;
 
-    left: 20%;
-    top: -2px;
+    left: 2px;
+    top: 0;
     padding-right: 20px;
 
     width: 134px;
@@ -225,11 +228,13 @@ body {
 
     width: 54px;
     height: 26px;
+
 }
 
 .info-bar__subscr-counter:after {
+    display: flex;
     opacity: 0.5;
-    width: 167px;
+    width: 156px;
     height: 30px;
 
     position: absolute;
@@ -240,7 +245,7 @@ body {
     cursor: pointer;
 }
 
-.info-bar__subscr-counter:hover::before {
+.info-bar__subscr-counter:hover + .info-bar__subscr-button{
     display: flex;
 }
 
@@ -430,6 +435,8 @@ body {
     color: #bdc3c7;
 }
 
+
+
 /*POP-UP SECTION */
 
 .pop-up-wrapper {
@@ -442,7 +449,11 @@ body {
     top: 0;
 
     position: absolute;
-    z-index: 3;
+    z-index: auto;
+}
+
+.pop-up-wrapper_visible {
+    display: flex;
 }
 
 .pop-up-page {
@@ -465,6 +476,23 @@ body {
     z-index: 19;
 }
 
+.pop-up-page .info-bar__subscr-counter {
+    z-index: 2;
+}
+
+.pop-up-page .info-bar__subscr-button {
+    z-index: 1;
+    display: none;
+}
+
+.pop-up-page .info-bar__subscr-counter:after {
+    width: 156px;
+}
+
+.pop-up-page .info-bar__subscr-counter:hover + .info-bar__subscr-button {
+    display: flex;
+}
+
 .pop-up__question-area,
 .pop-up__answer-area{
     display: flex;
@@ -473,17 +501,11 @@ body {
 }
 
 .pop-up__author{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
+    position: relative;
     margin-left: 100px;
     margin-top: 170px;
     width: 210px;
-    min-height: 235px;
-    /*height: auto;*/
-    background-color: lavender;
+    height: 254px;
 
     padding-left: 10px;
 }
@@ -491,39 +513,47 @@ body {
 .pop-up__userpic {
     height: 80px;
     width: 80px;
+    cursor: pointer;
 }
 
 .pop-up__authors-name {
-    margin-top: 15px;
     line-height: 22px;
     font-size: 16px;
     color: #95a5a6;
 
+    max-height: 40px;
+    padding-top: 20px;
+
+    cursor: pointer;
 }
 
 .pop-up__authors-role {
-    margin-top: 10px;
+    padding-top: 15px;
 }
 
 .pop-up__authors-rating {
     font-size: 21px;
     line-height: 21px;
     color: #2ecc71;
-    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 20px;
 }
 
-.pop-up__subscr-button {
-    display: flex;
+.pop-up__author .info-bar__subscr-button {
+    display: none;
+    position: absolute;
+    top: 224px;
+    left: 10px;
     justify-content: center;
     align-items: center;
-    height: 30px;
+
     width: 100px;
-    color: #fff;
-    border-radius: 15px;
-    background-color: #2ecc71;
-    font-size: 12px;
-    line-height: 14px;
-    margin-top: 20px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.pop-up__author:hover > .info-bar__subscr-button {
+    display: flex;
 }
 
 
@@ -632,16 +662,16 @@ body {
 @font-face {
     font-family: "GregorRegular";
     src: url("/fonts/GregorRegular/GregorRegular.eot");
-    src: url("/fonts/GregorRegular/GregorRegular.eot?#iefix")format("embedded-opentype"),
-    url("/fonts/GregorRegular/GregorRegular.woff") format("woff"),
-    url("/fonts/GregorRegular/GregorRegular.ttf") format("truetype");
+    src: url("/fonts/GregorRegular/GregorRegular.eot?#iefix")format("embedded-opentype");
+    /*url("/fonts/GregorRegular/GregorRegular.woff") format("woff"),*/
+    /*url("/fonts/GregorRegular/GregorRegular.ttf") format("truetype");*/
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Museo-Sans-Cyr";
-    src: url("/fonts/Museo-Sans-Cyr/MuseoSansCyrl_1.otf");
+    /*src: url("/fonts/Museo-Sans-Cyr/MuseoSansCyrl_1.otf");*/
     font-style: normal;
     font-weight: normal;
 }
