@@ -1,23 +1,37 @@
 body {
     margin: 0;
     color: #788a8b;
-    background-color: #ffffff;
     font-family: "Arial", sans-serif;
+    background-color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .header {
     display: flex;
+    justify-content: center;
 
     height: 100px;
-    width: 1440px;
+    width: 100%;
+    min-width: 1024px;
     border-bottom: 1px solid #eaecef;
+    background: #fff;
+    padding: 0;
+    margin: 0;
 }
 
 
 .header > div,
 .header > form {
     display: flex;
+    flex-shrink: 0;
+
 }
 
 .main-menu {
@@ -26,30 +40,29 @@ body {
     width: 100px;
     justify-content: center;
     align-items: center;
-    font-size: 45px;
-    color: #7f8c8d;
-
     cursor: pointer;
 }
 
 .logo {
     width: 250px;
-    background: #283d51 url('images/logo.png');
-    background-size: cover;
+    background: #283d51 url('images/logo.png') 50% no-repeat;
+    background-size: contain;
 
     cursor: pointer;
 }
 
 .search-form {
-    width: 700px;
-    /*min-width: 300px;*/
-    background: url('images/search-icon.png') 20px 50%/50px no-repeat;
-    padding-left: 85px;
+    max-width: 700px;
+    min-width: 300px;
+    flex-shrink: 3;
+    flex-grow: 1;
+    background: url('images/search-icon.png') 25px 50%/50px no-repeat;
     color: #bdc3c7;
 }
 
 .search-form__input {
-    width: 600px;
+    width: 100%;
+    margin-left: 100px;
     border: none;
     outline: none;
     height: 100%;
@@ -83,6 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 250px;
+
 }
 
 .profile-info__userpic {
@@ -115,12 +129,13 @@ body {
     flex-flow: column;
     justify-content: center;
     position: relative;
+    width: 100%;
 }
 
 .navigation {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 
     height: 130px;
     color: #bdc3c7;
@@ -128,37 +143,41 @@ body {
     font-size: 19px;
     line-height: 28px;
     font-family: "Museo-Sans-Cyr", sans-serif;
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-btn {
     min-width: 120px;
     width: auto;
+    height: 70px;
     border-bottom: 1px solid #eaecef;
-    padding: 0 30px 30px;
-    margin-bottom: 30px;
+    padding: 0 30px 0px;
 
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
 .current-section {
     color: #2ecc71;
+    height: 66px;
     border-bottom: 4px solid #2ecc71 !important;
-    padding-bottom: 26px !important;
 }
 
 .content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-self: center;
 
     height: auto;
-    width: 1200px;
+    width: 85%;
     margin-bottom: 50px;
 }
 
-.content__left-column,
-.content__right-column {
+.content__column{
     width: 600px;
     border: 1px solid #eaecef;
     border-bottom: none;
@@ -476,6 +495,10 @@ body {
     z-index: 19;
 }
 
+.pop-up-page .info-bar {
+    max-width: 700px;
+}
+
 .pop-up-page .info-bar__subscr-counter {
     z-index: 2;
 }
@@ -674,4 +697,90 @@ body {
     /*src: url("/fonts/Museo-Sans-Cyr/MuseoSansCyrl_1.otf");*/
     font-style: normal;
     font-weight: normal;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .main {
+        width: 600px;
+        flex-wrap: nowrap;
+
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .header {
+        flex-direction: column;
+
+        height: auto;
+        width: 100px;
+        min-width: auto;
+        max-width: 100px;
+        border: 1px solid #eaecef;
+        border-left: none;
+        border-top: none;
+
+    }
+
+    .header > div,
+    .header > form{
+        height: auto;
+        min-height: 100px;
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+    .header > form > input {
+        display: none;
+    }
+
+    .header > .profile-info {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .profile-info__rating {
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .navigation {
+        height: 100px;
+        align-items: flex-end;
+    }
+
+    .nav-btn {
+        margin-bottom: 0;
+    }
+
+    .content {
+        width: 100%;
+        opacity: 0.8;
+    }
+
+    .content__column {
+        border: none;
+        width: 100%;
+        align-items: center;
+
+    }
+
+    .quest-block {
+        border: 1px solid #eaecef;
+        margin-top: -1px;
+
+        min-width: 300px;
+        width: 520px;
+
+
+        flex-grow: 1;
+        flex-shrink: 1;
+
+    }
 }
