@@ -10,6 +10,7 @@ window.onload = main;
 // показать/скрыть поп ап
 function displayPopUp() {
     document.getElementById('pop-up-page').classList.toggle('visible');
+    document.getElementById('main-page-content').classList.toggle('visible');
 }
 
 

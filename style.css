@@ -174,7 +174,7 @@ body {
 
 
 .content {
-    display: flex;
+    display: none;
     justify-content: center;
     align-self: center;
 
@@ -487,7 +487,7 @@ body {
 
     min-width: 100%;
     /*width: 1300px;*/
-    height: 100%;
+    height: auto;
     background-color: #f4f5f6;
     /*background-color: rgba(44, 62, 80, 0.05);*/
     top: 0;
@@ -511,12 +511,11 @@ body {
     max-width: 1200px;
     width: 85%;
     /*min-width: 824px;*/
-    min-width: 500px;
+    min-width: 50px;
     flex-grow: 1;
     flex-shrink: 1;
 
     background-color: #fff;
-    /*background-color: powderblue;*/
 }
 
 .pop-up__close-icon {
@@ -538,6 +537,7 @@ body {
     justify-content: center;
 
     padding: 0 100px 70px;
+    min-width: 10px;
 
     flex-shrink: 1;
     /*background-color: wheat*/
@@ -565,7 +565,7 @@ body {
     /*background-color: lavender;*/
 }
 
-.pop-up__answer-area .pop-up__author {
+.pop-up__author {
     margin-top: 170px;
 }
 
@@ -573,6 +573,7 @@ body {
     height: 80px;
     width: 80px;
     cursor: pointer;
+    background-size: contain;
 }
 
 .pop-up__authors-name {
@@ -644,7 +645,6 @@ body {
 .pop-up__question-text,
 .pop-up__answer-text {
     max-width: 700px;
-    /*min-width: 500px;*/
     min-width: 0;
     flex-grow: 1;
     flex-shrink: 1;
@@ -652,7 +652,6 @@ body {
     margin-left: 0;
     margin-right: 0;
 
-    /*background-color: thistle;*/
 }
 
 .pop-up-page .info-bar {
@@ -715,7 +714,6 @@ body {
     height: 70px;
     align-items: flex-end;
     display: flex;
-
 }
 
 
@@ -789,6 +787,10 @@ body {
 
     .content__column {
         border: none;
+    }
+
+    .pop-up__author {
+        max-width: 100%;
     }
 
 }
@@ -882,7 +884,7 @@ body {
     .pop-up__author {
         padding-right: 50px;
         flex-shrink: 1;
-        width: 150px;
+        min-width: 150px;
     }
 
     .pop-up-page {
@@ -893,6 +895,8 @@ body {
     .pop-up__question-area,
     .pop-up__answer-area {
         padding: 0 70px 50px;
+        /*max-width: 400px;*/
+
     }
 
     .pop-up-page .quest-block__header {
@@ -903,7 +907,11 @@ body {
     .pop-up__question-text,
     .pop-up__answer-text {
         font-size: 20px;
-        line-height: 24px;
+        line-height: 27px;
+    }
+
+    .pop-up__filter {
+        align-self: center;
     }
 }
 
@@ -972,11 +980,6 @@ body {
         flex-shrink: 1;
     }
 
-    .navigation {
-        /*max-width: 600px;*/
-        /*min-width: 220px;*/
-        /*flex-grow: 1;*/
-    }
 
     .nav-btn {
         flex-grow: 1;
@@ -995,6 +998,75 @@ body {
     .answer-block:hover:after {
         display: none;
     }
+
+    .pop-up__question-area,
+    .pop-up__answer-area {
+        padding: 0 30px 50px;
+        min-width: 300px;
+        max-width: 100%;
+
+        flex-direction: column-reverse;
+    }
+
+    .question-area__question-card,
+    .answer-area__answer-card {
+        margin-top: 80px;
+    }
+
+
+    .pop-up__author {
+        min-width: 130px;
+        max-width: auto;
+        padding-right: 0;
+        margin-top: 50px;
+        max-height: 106px;
+        padding-left: 120px;
+
+        /*flex-direction: row;*/
+    }
+
+    .answer-area__author {
+        /*margin-top: 100px;*/
+    }
+
+    .pop-up__authors-name {
+        font-size: 14px;
+        padding-top: 0;
+    }
+
+    .pop-up__authors-name,
+    .pop-up__authors-role,
+    .pop-up__authors-rating {
+        /*max-width: 140px;*/
+        padding-top: 10px;
+    }
+
+    .pop-up__authors-rating {
+        padding-bottom: 0;
+    }
+
+    .pop-up__authors-name {
+        padding-top: 0;
+    }
+
+    .pop-up__userpic {
+        width: 66px;
+        height: 66px;
+        position: absolute;
+        top: 0;
+        left: 22px;
+    }
+
+    .pop-up__author .info-bar__subscr-button {
+
+        top: 76px;
+    }
+
+    .pop-up__filter > div {
+        max-width: 100px;
+        height: 50px;
+        padding-top: 20px;
+    }
 }
 
 @media screen and (max-width: 440px) {
@@ -1008,10 +1080,48 @@ body {
     .content .quest-block__who-answers,
     .content .answer-block__text,
     .content .answer-block__pers-info {
-        /*background-color: darkgray;*/
 
         padding-right: 0;
         margin-right: 15px;
         margin-left: 15px;
+    }
+
+
+    .pop-up-page {
+        max-width: 400px;
+        width: 100%;
+        min-width: 50px;
+        /*padding: 0 20px;*/
+    }
+
+    .pop-up__question-area,
+    .pop-up__answer-area {
+        padding: 0 20px;
+        min-width: 20px;
+        max-width: 400px;
+    }
+
+    .pop-up__author {
+        max-width: 300px;
+    }
+
+
+    .pop-up-page .info-bar,
+    .pop-up-page .quest-block__header,
+    .pop-up-page .quest-block__who-answers,
+    .pop-up__question-text,
+    .pop-up__answer-text {
+        /*min-width: 200px;*/
+        /*max-width: 600px;*/
+    }
+
+    .pop-up-page .info-bar {
+        /*width: 400px;*/
+        /*max-width: 400px;*/
+    }
+
+    .pop-up__filter > div {
+        max-width: 86px;
+        padding: 20px 10px 30px;
     }
 }
