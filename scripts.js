@@ -2,11 +2,40 @@
 var curSectionFilter = 0;
 
 
+// fulfill main
 window.onload = main;
 
 
+// define current width of window
 
-// console.log('cur sect: ' + curSectionFilter);
+var windowWidth = window.innerWidth;
+
+window.onresize = function () {
+    windowWidth = window.innerWidth;
+    console.log(windowWidth);
+
+    // если окно шире 600px, то убрать search pop-up
+    if (windowWidth > 600 && document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
+
+        setTimeout( function () {
+            document.getElementById('search-form__pop-up-input').classList.remove('visible');
+            document.getElementById('dark-layer').classList.remove('visible');
+
+                console.log('0.3s passed onresize')},
+            300);
+
+        document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchDisappears 300ms,fadeOut 300ms';
+        document.getElementById('dark-layer').style.animation = 'darkFadeOut 300ms';
+
+    // в ином случае - продолжить работу
+    } else {
+
+        console.log('after: ' + windowWidth);
+
+    }
+};
+
+
 
 
 // set timer for animations
@@ -15,8 +44,8 @@ function start500Timer(myFunc) {
 
 }
 
-function start300Timer(myFunc) {
-    setTimeout( function () { myFunc(); console.log('0.3s passed')}, 300);
+function start300Timer(myFunc, myFunc2) {
+    setTimeout( function () { myFunc(); myFunc2(); console.log('0.3s passed')}, 300);
 
 }
 
@@ -104,27 +133,31 @@ function displayDarkLayer() {
 // show search pop-up on click
 function showSearchForm() {
 
-    if (document.getElementById('page-wrapper').offsetWidth <= 600) {
-        displayPopUpSearch();
-        displayDarkLayer();
+    console.log('count started on click');
 
+    if (windowWidth <= 600) {
+        if (document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
+            hideSearchForm();
+        } else {
 
-        document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchAppears 300ms, fadeIn 300ms';
-        document.getElementById('dark-layer').style.animation = 'darkFadeIn 300ms';
+            document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchAppears 300ms, fadeIn 300ms';
+            document.getElementById('dark-layer').style.animation = 'darkFadeIn 300ms';
 
-    } else if (document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
-        hideSearchForm();
+            displayPopUpSearch();
+            displayDarkLayer();
+        }
     }
+
 }
 
 
 // hide pop-up search on click
 function hideSearchForm() {
-    start300Timer(displayPopUpSearch);
-    start300Timer(displayDarkLayer);
-
     document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchDisappears 300ms,fadeOut 300ms';
     document.getElementById('dark-layer').style.animation = 'darkFadeOut 300ms';
+
+    start300Timer(displayPopUpSearch, displayDarkLayer);
+    console.log('pop up hidden');
 
 }
 
@@ -142,7 +175,11 @@ function main() {
 
     addOnclickListeners(length);
 
+    console.log('start size: ' + window.innerWidth);
 }
+
+
+
 
 
 
