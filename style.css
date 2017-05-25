@@ -309,6 +309,7 @@ body {
     flex-grow: 1;
     height: auto;
     margin: 30px 40px 10px;
+    cursor: pointer;
 }
 
 .quest-block__who-answers {
@@ -486,19 +487,12 @@ body {
     align-items: center;
 
     min-width: 100%;
-    /*width: 1300px;*/
     height: auto;
     background-color: #f4f5f6;
-    /*background-color: rgba(44, 62, 80, 0.05);*/
     top: 0;
 
     position: absolute;
     z-index: 1;
-
-    /*animation: fadeOut 2s;*/
-    animation: fadeIn 0.6s;
-
-
 }
 
 
@@ -522,7 +516,6 @@ body {
 
     background-color: #fff;
 
-    animation: fadeIn 0.6s, pop-up-appear 0.6s;
 }
 
 .pop-up__close-icon {
@@ -547,7 +540,6 @@ body {
     min-width: 10px;
 
     flex-shrink: 1;
-    /*background-color: wheat*/
 }
 
 .pop-up__answer-area{
@@ -569,7 +561,6 @@ body {
 
     margin-top: 200px;
 
-    /*background-color: lavender;*/
 }
 
 .pop-up__author {
@@ -661,9 +652,7 @@ body {
 
 }
 
-.pop-up-page .info-bar {
 
-}
 
 .pop-up-page .info-bar__subscr-counter {
     z-index: 2;
@@ -687,6 +676,7 @@ body {
     font-size: 42px;
     line-height: 50px;
     margin-bottom: 20px;
+    cursor: auto;
 }
 
 .pop-up-page .quest-block__who-answers {
@@ -723,6 +713,13 @@ body {
     display: flex;
 }
 
+
+.backgr-pop-up {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+}
 
 
 
@@ -766,8 +763,8 @@ body {
 }
 
 @keyframes pop-up-appear {
-    0% {transform: translateX(-150px);}
-    100% {transform: translateX(0px);}
+    0% {transform: translateY(-150px);}
+    100% {transform: translateY(0px);}
 }
 
 @keyframes fadeIn {
@@ -776,8 +773,8 @@ body {
 }
 
 @keyframes pop-up-disappear{
-    0% {transform: translateX(0);}
-    100% {transform: translateX(150px);}
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-150px);}
 }
 
 @keyframes fadeOut {
@@ -824,10 +821,6 @@ body {
 
 @media screen and (max-width: 1024px) {
 
-
-    .main {
-        /*width: 600px;*/
-    }
 
     .header {
         min-width: 300px;
@@ -943,7 +936,6 @@ body {
 }
 
 
-
 @media screen and (max-width: 767px) {
     .header {
         min-width: 220px;
@@ -1049,12 +1041,8 @@ body {
         max-height: 106px;
         padding-left: 120px;
 
-        /*flex-direction: row;*/
     }
 
-    .answer-area__author {
-        /*margin-top: 100px;*/
-    }
 
     .pop-up__authors-name {
         font-size: 14px;
@@ -1064,7 +1052,6 @@ body {
     .pop-up__authors-name,
     .pop-up__authors-role,
     .pop-up__authors-rating {
-        /*max-width: 140px;*/
         padding-top: 10px;
     }
 
@@ -1132,20 +1119,6 @@ body {
         max-width: 300px;
     }
 
-
-    .pop-up-page .info-bar,
-    .pop-up-page .quest-block__header,
-    .pop-up-page .quest-block__who-answers,
-    .pop-up__question-text,
-    .pop-up__answer-text {
-        /*min-width: 200px;*/
-        /*max-width: 600px;*/
-    }
-
-    .pop-up-page .info-bar {
-        /*width: 400px;*/
-        /*max-width: 400px;*/
-    }
 
     .pop-up__filter > div {
         max-width: 86px;
