@@ -27,11 +27,11 @@
 
         <div class="main">
 
-            <nav class="main__navigation navigation">
-                <div class="nav-btn navigation__actual current-section">Актуальные</div>
-                <div class="nav-btn navigation__new">Новые</div>
-                <div class="nav-btn navigation__discussed">Обсуждаемые</div>
-            </nav>
+            <div class="main__filter filter">
+                <div class="filter-btn" id="filter__actual" onclick="toggleCurrentSectionClass('filter__actual')">Актуальные</div>
+                <div class="filter-btn" id="filter__new" onclick="toggleCurrentSectionClass('filter__new')">Новые</div>
+                <div class="filter-btn" id="filter__discussed" onclick="toggleCurrentSectionClass('filter__discussed')">Обсуждаемые</div>
+            </div>
 
             <div class="content visible" id="main-page-content">
                 <div class="content__column content__left-column">
@@ -216,6 +216,7 @@
                                     </div>
                                 </div>
                             </li>
+                        </ul>
                 </div>
 
                 </div>
@@ -262,10 +263,10 @@
                         </div>
                     </div>
 
-                    <div class="pop-up__filter navigation">
+                    <div class="pop-up__filter filter">
                         <div>Сначала</div>
-                        <div class="filter__best nav-btn current-section">лучшие</div>
-                        <div class="filter__last nav-btn">последние</div>
+                        <div class="filter-btn" id="filter__best" onclick="toggleCurrentSectionClass('filter__best')">лучшие</div>
+                        <div class="filter-btn" id="filter__last" onclick="toggleCurrentSectionClass('filter__last')">последние</div>
                     </div>
 
                     <div class="pop-up__answer-area ans-1">
