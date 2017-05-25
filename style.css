@@ -66,6 +66,7 @@ body {
 .search-form__input {
     width: 100%;
     margin-left: 100px;
+    margin-right: 20px;
     border: none;
     outline: none;
     height: 100%;
@@ -872,18 +873,18 @@ body {
         display: none;
     }
 
-    .navigation {
+    .filter {
         height: 100px;
     }
 
-    .nav-btn {
+    .filter-btn {
         margin-bottom: 0;
         min-width: 166px;
         padding: 0px 0 29px;
     }
 
     .content,
-    .navigation {
+    .filter {
         /*width: 100%;*/
         min-width: 320px;
         max-width: 600px;
@@ -975,6 +976,8 @@ body {
 
     .search-form > input {
         font-size: 16px;
+        margin-right: 0;
+
     }
 
     .header > .logo,
@@ -1015,7 +1018,7 @@ body {
     }
 
 
-    .nav-btn {
+    .filter-btn {
         flex-grow: 1;
         min-width: 50px;
 
@@ -1055,7 +1058,6 @@ body {
         margin-top: 50px;
         max-height: 106px;
         padding-left: 120px;
-
     }
 
 

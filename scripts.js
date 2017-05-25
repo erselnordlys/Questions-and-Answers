@@ -97,7 +97,6 @@ function main() {
     console.log(length);
 
     addOnclickListeners(length);
-
 }
 
 
