@@ -9,14 +9,17 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="page-wrapper">
 
         <header class="header">
             <div class="main-menu"></div>
             <div class="logo"></div>
-            <form class="search-form" action="" method="post" >
-                <input type="search" name="" placeholder="Найти ответ..." class="search-form__input" />
+            <form class="search-form" action="" method="post" onclick="showSearchForm()">
+                <input type="search" name="" placeholder="Найти ответ..." id="search-form__input" class="search-form__input">
             </form>
+            <input type="search" name="" placeholder="Найти ответ..." id="search-form__pop-up-input" class="search-form__pop-up-input">
+
+
             <div class="question-button"><span class="question-button__quest">?</span><span>Задать<br>вопрос</span></div>
             <div class="profile-info">
                 <div class="profile-info__userpic"></div>
@@ -332,8 +335,10 @@
                 <div class="backgr-pop-up" id="backgr-pop-up"></div>
             </div>
 
+            <div class="dark-layer" id="dark-layer" onclick="hideSearchForm()"></div>
 
         </div>
+
     </div>
 </body>
 </html>

@@ -10,8 +10,13 @@ window.onload = main;
 
 
 // set timer for animations
-function startTimer(myFunc) {
-    setTimeout( function () { myFunc(); console.log('0.6s passed')}, 500);
+function start500Timer(myFunc) {
+    setTimeout( function () { myFunc(); console.log('0.5s passed')}, 500);
+
+}
+
+function start300Timer(myFunc) {
+    setTimeout( function () { myFunc(); console.log('0.3s passed')}, 300);
 
 }
 
@@ -19,8 +24,6 @@ function startTimer(myFunc) {
 function displayPopUp() {
     document.getElementById('pop-up-wrapper').classList.toggle('visible');
     defineDefaultCurSection();
-
-
 }
 
 // display/hide content
@@ -30,10 +33,9 @@ function displayMainContent() {
 
 }
 
-
 function showPopUp() {
     displayPopUp();
-    startTimer(displayMainContent);
+    start500Timer(displayMainContent);
 
     document.getElementById('main-page-content').style.animation = 'fadeOut 500ms'; // исчезает контент
     document.getElementById('pop-up-wrapper').style.animation = 'fadeIn 500ms'; // wrapper appears
@@ -41,9 +43,8 @@ function showPopUp() {
 
 }
 
-
 function hidePopUp() {
-    startTimer(displayPopUp);
+    start500Timer(displayPopUp);
     displayMainContent();
 
     document.getElementById('pop-up-page').style.animation = 'pop-up-disappear 500ms'; // pop-up page moves out
@@ -64,6 +65,8 @@ function addOnclickListeners(total) {
     document.getElementById('backgr-pop-up').onclick = hidePopUp; // add onclick on backgr
 }
 
+
+
 // toggle active class on filters
 function toggleCurrentSectionClass(id) {
 
@@ -72,7 +75,6 @@ function toggleCurrentSectionClass(id) {
     curSectionFilter =  document.getElementById(id);
     curSectionFilter.classList.add('current-section');
 }
-
 
 // определить текущую выбранную кнопку фильтра
 function defineDefaultCurSection() {
@@ -88,15 +90,58 @@ function defineDefaultCurSection() {
 }
 
 
+
+// display pop-up search
+function displayPopUpSearch() {
+    document.getElementById('search-form__pop-up-input').classList.toggle('visible');
+}
+
+// display dark layer
+function displayDarkLayer() {
+    document.getElementById('dark-layer').classList.toggle('visible');
+}
+
+// show search pop-up on click
+function showSearchForm() {
+
+    if (document.getElementById('page-wrapper').offsetWidth <= 600) {
+        displayPopUpSearch();
+        displayDarkLayer();
+
+
+        document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchAppears 300ms, fadeIn 300ms';
+        document.getElementById('dark-layer').style.animation = 'darkFadeIn 300ms';
+
+    } else if (document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
+        hideSearchForm();
+    }
+}
+
+
+// hide pop-up search on click
+function hideSearchForm() {
+    start300Timer(displayPopUpSearch);
+    start300Timer(displayDarkLayer);
+
+    document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchDisappears 300ms,fadeOut 300ms';
+    document.getElementById('dark-layer').style.animation = 'darkFadeOut 300ms';
+
+}
+
+
+
+
 function main() {
 
     defineDefaultCurSection();
+
 
     var x = document.querySelectorAll('.lc__quest-block-1 .answer-block'); // работает только для 1 вопроса
     var length = x.length;
     console.log(length);
 
     addOnclickListeners(length);
+
 }
 
 
