@@ -1,10 +1,11 @@
 
-var curSectionFilter = 0;
+
 
 
 // fulfill main
 window.onload = main;
 
+var curSectionFilter;
 
 // define current width of window
 
@@ -12,59 +13,51 @@ var windowWidth = window.innerWidth;
 
 window.onresize = function () {
     windowWidth = window.innerWidth;
-    console.log(windowWidth);
-
     // если окно шире 600px, то убрать search pop-up
     if (windowWidth > 600 && document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
 
-        setTimeout( function () {
+        setTimeout(function () {
             document.getElementById('search-form__pop-up-input').classList.remove('visible');
             document.getElementById('dark-layer').classList.remove('visible');
-
-                console.log('0.3s passed onresize')},
-            300);
+        }, 300);
 
         document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchDisappears 300ms,fadeOut 300ms';
         document.getElementById('dark-layer').style.animation = 'darkFadeOut 300ms';
-
-    // в ином случае - продолжить работу
-    } else {
-
-        console.log('after: ' + windowWidth);
-
     }
-};
 
+};
 
 
 
 // set timer for animations
 function start500Timer(myFunc) {
-    setTimeout( function () { myFunc(); console.log('0.5s passed')}, 500);
+    setTimeout( function () { myFunc(); }, 500);
 
 }
 
 function start300Timer(myFunc, myFunc2) {
-    setTimeout( function () { myFunc(); myFunc2(); console.log('0.3s passed')}, 300);
+    setTimeout( function () { myFunc(); myFunc2(); }, 300);
 
 }
 
 // display/hide pop-up
 function displayPopUp() {
     document.getElementById('pop-up-wrapper').classList.toggle('visible');
-    defineDefaultCurSection();
+    document.getElementById('main-page-content').classList.toggle('visible');
 }
 
 // display/hide content
 function displayMainContent() {
     document.getElementById('main-page-content').classList.toggle('visible');
-    defineDefaultCurSection();
 
 }
 
 function showPopUp() {
     displayPopUp();
     start500Timer(displayMainContent);
+    toggleCurrentSectionClass('filter__best');
+
+
 
     document.getElementById('main-page-content').style.animation = 'fadeOut 500ms'; // исчезает контент
     document.getElementById('pop-up-wrapper').style.animation = 'fadeIn 500ms'; // wrapper appears
@@ -75,6 +68,9 @@ function showPopUp() {
 function hidePopUp() {
     start500Timer(displayPopUp);
     displayMainContent();
+
+    toggleCurrentSectionClass('filter__actual');
+
 
     document.getElementById('pop-up-page').style.animation = 'pop-up-disappear 500ms'; // pop-up page moves out
     document.getElementById('pop-up-wrapper').style.animation = 'fadeOut 500ms'; // wrapper fades out
@@ -107,15 +103,16 @@ function toggleCurrentSectionClass(id) {
 
 // определить текущую выбранную кнопку фильтра
 function defineDefaultCurSection() {
+
     if (document.getElementById('main-page-content').classList.contains("visible")) {
         curSectionFilter = document.getElementById('filter__actual');
-    } else {
+
+    } else if (document.getElementById('pop-up-wrapper').classList.contains("visible")){
         curSectionFilter = document.getElementById('filter__best');
     }
 
-    curSectionFilter.classList.add('current-section');
 
-    console.log('new cur sect: ' + curSectionFilter.innerHTML);
+    curSectionFilter.classList.add('current-section');
 }
 
 
@@ -133,12 +130,14 @@ function displayDarkLayer() {
 // show search pop-up on click
 function showSearchForm() {
 
-    console.log('count started on click');
 
     if (windowWidth <= 600) {
+
         if (document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
+
             hideSearchForm();
         } else {
+
 
             document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchAppears 300ms, fadeIn 300ms';
             document.getElementById('dark-layer').style.animation = 'darkFadeIn 300ms';
@@ -153,12 +152,11 @@ function showSearchForm() {
 
 // hide pop-up search on click
 function hideSearchForm() {
-    document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchDisappears 300ms,fadeOut 300ms';
-    document.getElementById('dark-layer').style.animation = 'darkFadeOut 300ms';
+
+    document.getElementById('search-form__pop-up-input').style.animation = 'popUpSearchDisappears 350ms,fadeOut 350ms';
+    document.getElementById('dark-layer').style.animation = 'darkFadeOut 350ms';
 
     start300Timer(displayPopUpSearch, displayDarkLayer);
-    console.log('pop up hidden');
-
 }
 
 
@@ -166,16 +164,11 @@ function hideSearchForm() {
 
 function main() {
 
-    defineDefaultCurSection();
-
-
     var x = document.querySelectorAll('.lc__quest-block-1 .answer-block'); // работает только для 1 вопроса
     var length = x.length;
-    console.log(length);
-
     addOnclickListeners(length);
 
-    console.log('start size: ' + window.innerWidth);
+    defineDefaultCurSection();
 }
 
 

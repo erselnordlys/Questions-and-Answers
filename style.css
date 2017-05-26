@@ -26,7 +26,7 @@ body {
     padding: 0;
     margin: 0;
 
-    z-index: 5;
+    /*z-index: 5;*/
 
 }
 
@@ -103,7 +103,7 @@ body {
     position: absolute;
     top: 70px;
 
-    z-index: 4;
+    z-index: 5;
     padding: 0 10%;
 }
 
@@ -200,7 +200,7 @@ body {
     line-height: 28px;
     font-family: "Museo-Sans-Cyr", sans-serif;
     width: 100%;
-    z-index: 1;
+    z-index: auto;
 }
 
 .filter-btn {
@@ -326,7 +326,7 @@ body {
     position: absolute;
     left: -2px;
     top: -2px;
-    z-index: 1;
+    z-index: auto;
     content: "";
     cursor: pointer;
 }
@@ -862,7 +862,8 @@ body {
 
 @keyframes darkFadeOut {
     0% { opacity: 0.6;}
-    100% {opacity: 0;}
+    90% {opacity: 0;}
+    100% {display: none;}
 }
 
 
@@ -1106,6 +1107,7 @@ body {
 
     .quest-block {
         min-width: 30px;
+        margin-top: 0px;
     }
 
     .answer-block:hover:after {
