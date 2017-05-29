@@ -1,7 +1,5 @@
 
 
-
-
 // fulfill main
 window.onload = main;
 
@@ -12,8 +10,8 @@ var curSectionFilter;
 var windowWidth = window.innerWidth;
 
 window.onresize = function () {
+
     windowWidth = window.innerWidth;
-    // если окно шире 600px, то убрать search pop-up
     if (windowWidth > 600 && document.getElementById('search-form__pop-up-input').classList.contains('visible')) {
 
         setTimeout(function () {
@@ -28,8 +26,7 @@ window.onresize = function () {
 };
 
 
-
-// set timer for animations
+// set timers
 function start500Timer(myFunc) {
     setTimeout( function () { myFunc(); }, 500);
 
@@ -40,18 +37,21 @@ function start300Timer(myFunc, myFunc2) {
 
 }
 
+
 // display/hide pop-up
 function displayPopUp() {
     document.getElementById('pop-up-wrapper').classList.toggle('visible');
-    document.getElementById('main-page-content').classList.toggle('visible');
+    // document.getElementById('main-page-content').classList.toggle('visible');
 }
 
 // display/hide content
 function displayMainContent() {
+    console.log('content class changes');
     document.getElementById('main-page-content').classList.toggle('visible');
 
 }
 
+// how pop-up appears
 function showPopUp() {
     displayPopUp();
     start500Timer(displayMainContent);
@@ -65,6 +65,7 @@ function showPopUp() {
 
 }
 
+// how pop-up disappears
 function hidePopUp() {
     start500Timer(displayPopUp);
     displayMainContent();
@@ -77,7 +78,7 @@ function hidePopUp() {
     document.getElementById('main-page-content').style.animation = 'fadeIn 500ms'; // content appears
 }
 
-// add onclick listeners to ans-blocks and close-icon
+// add onclick listeners to answer-blocks and close-icon
 function addOnclickListeners(total) {
     for (var i = 0; i < total; i++) {
         document.querySelectorAll('.answer-block')[i].onclick = showPopUp; // add listener on ans-blocks
@@ -101,7 +102,7 @@ function toggleCurrentSectionClass(id) {
     curSectionFilter.classList.add('current-section');
 }
 
-// определить текущую выбранную кнопку фильтра
+// define current section of filter-btns when loaded
 function defineDefaultCurSection() {
 
     if (document.getElementById('main-page-content').classList.contains("visible")) {
@@ -164,7 +165,9 @@ function hideSearchForm() {
 
 function main() {
 
-    var x = document.querySelectorAll('.lc__quest-block-1 .answer-block'); // работает только для 1 вопроса
+    displayMainContent();
+
+    var x = document.querySelectorAll('.lc__quest-block-1 .answer-block'); // works only for 1 question
     var length = x.length;
     addOnclickListeners(length);
 
