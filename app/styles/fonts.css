@@ -1,0 +1,16 @@
+
+
+@font-face {
+    font-family: "GregorRegular";
+    src: url("../fonts/GregorRegular/GregorRegular.eot");
+    src: url("../fonts/GregorRegular/GregorRegular.eot?#iefix")format("embedded-opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Museo-Sans-Cyr";
+    src: url("../fonts/Museo-Sans-Cyr/MuseoSansCyrl_1.otf");
+    font-style: normal;
+    font-weight: normal;
+}

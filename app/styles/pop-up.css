@@ -1,0 +1,251 @@
+
+/*POP-UP SECTION */
+
+.pop-up-wrapper {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-width: 100%;
+    height: auto;
+    background-color: #f4f5f6;
+    top: 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+
+.visible {
+    display: flex;
+}
+
+
+.pop-up-page {
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: auto;
+
+    margin: 100px 50px 75px;
+    max-width: 1200px;
+    min-width: 50px;
+    position: relative;
+
+    width: 85%;
+    z-index: 3;
+}
+
+.pop-up__close-icon {
+    background-image: url('../images/icons/close-icon.png');
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 28px;
+    height: 28px;
+    z-index: 19;
+
+    cursor: pointer;
+}
+
+.pop-up__question-area,
+.pop-up__answer-area{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+
+    justify-content: center;
+    min-width: 10px;
+
+    padding: 0 100px 70px;
+}
+
+.pop-up__answer-area{
+    border-top: 1px solid #f4f5f6;
+}
+
+.pop-up__author{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    flex-direction: column;
+    padding-right: 100px;
+    width: auto;
+    max-width: 200px;
+    min-width: 160px;
+    height: 254px;
+
+    margin-top: 200px;
+
+}
+
+.pop-up__author {
+    margin-top: 170px;
+}
+
+.pop-up__userpic {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    background-size: contain;
+}
+
+.pop-up__authors-name {
+    line-height: 22px;
+    font-size: 16px;
+    color: #95a5a6;
+
+    max-height: 40px;
+    padding-top: 20px;
+
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pop-up__authors-role {
+    padding-top: 15px;
+}
+
+.pop-up__authors-rating {
+    font-size: 21px;
+    line-height: 21px;
+    color: #2ecc71;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.pop-up__author .info-bar__subscr-button {
+    display: flex;
+    opacity: 0;
+    position: absolute;
+    top: 224px;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    padding: 0;
+    cursor: pointer;
+
+    transition: all 0.3s;
+}
+
+.pop-up__author:hover > .info-bar__subscr-button {
+    opacity: 1;
+}
+
+.pop-up__author:hover > .pop-up__authors-name{
+    color: #34495e;
+}
+
+
+.question-card,
+.answer-card{
+    max-width: 900px;
+    min-width: 00px;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 140px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+}
+
+.answer-card {
+    margin-top: 110px;
+}
+
+
+.pop-up-page .info-bar,
+.pop-up-page .quest-block__header,
+.pop-up-page .quest-block__who-answers,
+.pop-up__question-text,
+.pop-up__answer-text {
+    max-width: 700px;
+    min-width: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+
+
+.pop-up-page .info-bar__subscr-counter {
+    z-index: 2;
+}
+
+.pop-up-page .info-bar__subscr-button {
+    z-index: 1;
+    display: flex;
+    opacity: 0;
+
+    transition: all 0.3s;
+}
+
+.pop-up-page .info-bar__subscr-counter:after {
+    width: 156px;
+}
+
+.pop-up-page .info-bar__subscr-counter:hover + .info-bar__subscr-button {
+    opacity: 1;
+}
+
+
+.pop-up-page .quest-block__header {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    cursor: auto;
+}
+
+.pop-up-page .quest-block__who-answers {
+    line-height: 20px;
+}
+
+.pop-up__question-text,
+.pop-up__answer-text {
+    font-size: 23px;
+    font-family: "GregorRegular", serif;
+    color: #34495e;
+    line-height: 35px;
+}
+
+.pop-up__question-text {
+    margin-top: 70px;
+
+}
+
+.pop-up__answer-text {
+    margin-top: 30px;
+}
+
+.pop-up__filter {
+    height: 100px;
+}
+
+.pop-up__filter > div {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    height: 70px;
+    align-items: flex-end;
+    display: flex;
+}
+
+
+.backgr-pop-up {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+}

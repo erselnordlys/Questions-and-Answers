@@ -1,0 +1,33 @@
+{
+  "name": "q-and-a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erselnordlys/Questions-and-Answers.git"
+  },
+  "author": "Alla Panchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erselnordlys/Questions-and-Answers/issues"
+  },
+  "homepage": "https://github.com/erselnordlys/Questions-and-Answers#readme",
+  "devDependencies": {
+    "css-declaration-sorter": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-csslint": "^1.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1"
+  },
+  "dependencies": {
+    "del": "^2.2.2",
+    "imagemin": "^5.3.1"
+  }
+}

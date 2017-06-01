@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/main-style.css">
+    <link rel="stylesheet" href="styles/pop-up.css">
+    <link rel="stylesheet" href="styles/userpics.css">
+    <link rel="stylesheet" href="styles/keyframes.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+
+
+    <script src="scripts/scripts.js"></script>
+</head>
+<body>
+    <div class="wrapper" id="page-wrapper">
+
+        <header class="header">
+            <div class="main-menu"></div>
+            <div class="logo"></div>
+            <form class="search-form" action="" method="post" onclick="showSearchForm()">
+                <input type="search" name="" placeholder="Найти ответ..." id="search-form__input" class="search-form__input">
+            </form>
+            <input type="search" name="" placeholder="Найти ответ..." id="search-form__pop-up-input" class="search-form__pop-up-input">
+
+
+            <div class="question-button"><span class="question-button__quest">?</span><span>Задать<br>вопрос</span></div>
+            <div class="profile-info">
+                <div class="profile-info__userpic"></div>
+                <div class="profile-info__rating"><span class="rating-text">Рейтинг</span><br><span class="rating-number">4.2</span> </div>
+            </div>
+        </header>
+
+
+        <div class="main">
+
+            <div class="main__filter filter">
+                <div class="filter-btn" id="filter__actual" onclick="toggleCurrentSectionClass('filter__actual')">Актуальные</div>
+                <div class="filter-btn" id="filter__new" onclick="toggleCurrentSectionClass('filter__new')">Новые</div>
+                <div class="filter-btn" id="filter__discussed" onclick="toggleCurrentSectionClass('filter__discussed')">Обсуждаемые</div>
+            </div>
+
+            <div class="content " id="main-page-content">
+                <div class="content__column content__left-column">
+                    <div class="quest-block lc__quest-block-1">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">2,3K</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+                            <div class="info-bar__date-theme"><span class="info-bar__date">27 сен</span> <span class="info-bar__theme">ЭКОНОМИКА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Почему ЦБ отозвал лицензию у Московского "Банк 24.ру"?</h1>
+                        <div class="quest-block__who-answers"><span class="who-answers__total">42 ответа </span> • <span class="who-answers__names"> Отвечают: Оксана Ящина, Виталий Васильченко,
+                        Анатолий Онопченко, Михаил Варагин, Павел Пещеряков, Мария Логинова</span></div>
+                        <ul class="ans-area">
+                            <li class="answer-block" id="lc__q1-ans1">
+
+                                <div class="answer-block__text">Начнем с того, что надзор в банковской сфере был ужесточен после прихода на пост
+                                председателя ЦБ Эльвиры Набиуллиной в июне 2013 года. За год лицензий лишились более 60 банков, в том числе такие крупные, как Мастер-Банк...</div>
+
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-yashina"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Оксана Ящина</span><span class="pers-info__rating">7.6</span></div>
+                                        <div class="pers-info__who-role">Главный аналитик, РБК</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Потому, что министерство финансов предлагает отказаться от так
+                                    называемой фиксированной выплаты будущей пенсии для балансировки бюджета в 2015—2017 годах...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-vasilchenko"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Виталий Васильченко</span><span class="pers-info__rating">5.2</span> </div>
+                                        <div class="pers-info__who-role">Главный аналитик, РБК</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="quest-block lc__quest-block-2">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">1,9K</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+                            <div class="info-bar__date-theme"><span class="info-bar__date">13 авг</span> <span class="info-bar__theme">ЭКОНОМИКА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Что происходит с рублем?</h1>
+                        <div class="quest-block__who-answers"><span class="who-answers__total">26 ответов</span> • <span class="who-answers__names">Отвечают:
+                            Георгий Неяскин, Кирилл Горин, Елена Вороненко, Джон Николсон, Дмитрий Долгов, Александр Панфилов</span></div>
+                        <ul class="ans-area">
+                            <li class="answer-block">
+                                <div class="answer-block__text">Дешевеющая нефть. В течение последнего года курсы рубля
+                                    и стоимость барреля были связаны не так сильно, как наблюдалась до этого. Нефть
+                                    сейчас вроде бы дороже, чем в годы кризиса, но рубль при этом слабее...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-neyaskin"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Георгий Неяскин</span><span class="pers-info__rating">7.6</span></div>
+                                        <div class="pers-info__who-role">Зам. президента ассоциации Российских банков</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="quest-block lc__quest-block-3">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">1,9K</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+                            <div class="info-bar__date-theme"><span class="info-bar__date">13 авг</span> <span class="info-bar__theme">ЕДА</span> </div>
+                        </div>
+                        <h1 class="quest-block__header">Что известно о кофе?</h1>
+                        <div class="quest-block__who-answers">
+                            <span class="who-answers__names">Нет ответов</span>
+                            <span class="who-answers__reply">Ответить</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content__column content__right-column">
+                    <div class="quest-block rc__quest-block-1">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">2,1K</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+                            <div class="info-bar__date-theme"><span class="info-bar__date">3 июн</span> <span class="info-bar__theme">БИЗНЕС</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Правда ли, что за логотип Москвы <br>и метро
+                            студия Лебедева получила <br>117 млн р.?</h1>
+                        <div class="quest-block__who-answers">
+                            <span class="who-answers__total">6 ответов</span> •
+                            <span class="who-answers__names">Отвечают: Артемий Лебедев, Алексей Андреев,
+                                Стас Жицкий, Даниил Сергеев, Алексей Аметов, Роман Любимов</span>
+                        </div>
+
+                        <ul class="ans-area">
+                            <li class="answer-block">
+                                <div class="answer-block__text">Идите на**й.</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-lebedev"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Артемий Лебедев</span><span class="pers-info__rating">0.0</span></div>
+                                        <div class="pers-info__who-role">Худрук Студии Лебедева</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Средняя стоимость разработки платформы бренда
+                                    и позиционирования — от 500 тысяч до 2 000 000 рублей, дизайна — около миллиона,
+                                    всевозможных его расширений и адаптаций — еще миллиона полтора-два. Итого средний
+                                    проект по ребрендингу стоит около трех с половиной — четырех миллионов...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-andreev"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Алексей Андреев</span><span class="pers-info__rating">5.2</span></div>
+                                        <div class="pers-info__who-role">Генеральный директор Depot WPF, сопрезидент АБКР</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Мне кажется, нам как потребителям этой самой буквы
+                                    лучше стоит думать о том, что она какое-никакое удобство привносит в нашу городскую
+                                    среду, а не о том, насколько страшно обогатился Артемий Лебедев...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-zhitsky"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Стас Жицкий</span><span class="pers-info__rating">6.9</span></div>
+                                        <div class="pers-info__who-role">OPEN!Design</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="answer-block">
+                                <div class="answer-block__text">Это просто рассуждения дилетантов.
+                                    С таким же смыслом я могу говорить о бозоне Хиггса — это никак науке не поможет....</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-sergeev"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Даниил Сергеев</span><span class="pers-info__rating">7.8</span></div>
+                                        <div class="pers-info__who-role">Куратор FIRMA</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="quest-block rc__quest-block-2">
+                        <div class="quest-block__info-bar">
+                            <div class="info-bar__subscr-counter">1,2K</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+                            <div class="info-bar__date-theme"><span class="info-bar__date">3 июн</span> <span class="info-bar__theme">ЛИТЕРАТУРА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Были ли подвержены творческим кризисам Пушкин или Толстой?</h1>
+                        <div class="quest-block__who-answers">
+                            <span class="who-answers__total">3 ответа</span> •
+                            <span class="who-answers__names">Отвечают: Доминик Данн, Рэй Бредбери, Елена Вороненко</span>
+                        </div>
+
+                        <ul class="ans-area">
+                            <li class="answer-block">
+                                <div class="answer-block__text">Думаю, вести дневник — самое лучшее для писателя…
+                                    Особенно бесценным окажется журнал при творческом тупике. Записывайте туда
+                                    жалобы самому себе на творческий кризис. Рассказывайте, как плохо...</div>
+                                <div class="answer-block__pers-info">
+                                    <div class="pers-info__userpic userpic-dann"></div>
+                                    <div class="pers-info__who">
+                                        <div class="pers-info__who-name-rating"><span class="pers-info__name">Доминик Данн</span><span class="pers-info__rating">7.6</span></div>
+                                        <div class="pers-info__who-role">Писатель</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+
+                </div>
+            </div>
+
+
+                <!--------POP UP PAGE-------->
+
+            <div class="pop-up-wrapper" id="pop-up-wrapper">
+                <div class="pop-up-page" id="pop-up-page">
+                    <div class="pop-up__close-icon" id="close-icon"></div>
+
+                    <div class="pop-up__question-area">
+
+                        <div class="pop-up__author question-area__author">
+                            <div class="pop-up__userpic userpic-konstantinopolsky"></div>
+                            <div class="pop-up__authors-name">Константин Константинопольский</div>
+                            <div class="pers-info__who-role pop-up__authors-role">Журналист, блогер</div>
+                            <div class="pop-up__authors-rating">3.9</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+
+                        </div>
+
+                        <div class="question-area__question-card question-card">
+                            <div class="question-card__info-bar info-bar">
+
+                                <div class="pop-up__subscr-counter info-bar__subscr-counter">2,3K</div>
+                                <div class="info-bar__subscr-button">Подписаться</div>
+
+                                <div class="info-bar__date-theme"><span class="info-bar__date">27 сен</span> <span class="info-bar__theme">ЭКОНОМИКА</span> </div>
+                        </div>
+
+                        <h1 class="quest-block__header">Почему ЦБ отозвал лицензию <br>у Московского "Банк 24.ру"?</h1>
+                        <div class="quest-block__who-answers"><span class="who-answers__total">42 ответа</span> • <span class="who-answers__names">Отвечают: Оксана Ящина, Виталий Васильченко
+                        Анатолий Онопченко, Михаил Варагин, Павел Пещеряков, Мария Логинова</span></div>
+
+                            <div class="pop-up__question-text">Центральный банк России отозвал лицензию на осуществление
+                                банковских операций у московского «Банк24.ру», сообщается в пресс-релизе ЦБ.<br> <br>
+                                Говорят, банк не соблюдал требования законодательства в области противодействия
+                                легализации (отмыванию) доходов, полученных преступным путем, и финансированию терроризма.<br><br>
+                                Что об этом думают эксперты?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pop-up__filter filter">
+                        <div>Сначала</div>
+                        <div class="filter-btn" id="filter__best" onclick="toggleCurrentSectionClass('filter__best')">лучшие</div>
+                        <div class="filter-btn" id="filter__last" onclick="toggleCurrentSectionClass('filter__last')">последние</div>
+                    </div>
+
+                    <div class="pop-up__answer-area ans-1">
+
+                        <div class="pop-up__author answer-area__author">
+                                <div class="pop-up__userpic userpic-yashina"></div>
+                                <div class="pop-up__authors-name">Оксана Ящина</div>
+                                <div class="pers-info__who-role pop-up__authors-role">Главный аналитик, РБК</div>
+                                <div class="pop-up__authors-rating">7.6</div>
+                                <div class="info-bar__subscr-button">Подписаться</div>
+
+                        </div>
+
+                        <div class="answer-area__answer-card answer-card">
+                            <div class="answer-card__info-bar info-bar">
+                                <div class="info-bar__subscr-counter pop-up__subscr-counter">2,3K</div>
+                                <div class="info-bar__subscr-button">Подписаться</div>
+
+                                <div class="info-bar__date">Сегодня, 16:48</div>
+                            </div>
+                            <div class="pop-up__answer-text">К сожалению, у меня нет возможности ответить Вам на канале
+                                «Россия 24», просто потому, что людей с моей точкой зрения на такие каналы не пускают.
+                                Там показывают только тех, кто разделяет Вашу позицию. Видимо, поэтому Вам и приходится
+                                общаться с экраном, а не с живым Макаревичем, Собчак или кем-то другим в студии.<br><br>
+                                При этом мое приглашение встретиться с Вами в прямом эфире моей программы «Собчак живьем»
+                                остается в силе. Я знаю, что Вы человек в себе уверенный, и мы вполне могли бы поговорить
+                                уже в режиме живой беседы, а не актерского монолога. Но пока — пишу Вам ответ здесь.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pop-up__answer-area ans-2">
+
+                        <div class="pop-up__author answer-area__author">
+                            <div class="pop-up__userpic userpic-vasilchenko"></div>
+                            <div class="pop-up__authors-name">Вталий Васильченко</div>
+                            <div class="pers-info__who-role pop-up__authors-role">Главред «Деловая среда»</div>
+                            <div class="pop-up__authors-rating">7.6</div>
+                            <div class="info-bar__subscr-button">Подписаться</div>
+
+                        </div>
+
+                        <div class="answer-area__answer-card answer-card">
+                            <div class="answer-card__info-bar info-bar">
+                                <div class="info-bar__subscr-counter">2,3K</div>
+                                <div class="info-bar__subscr-button">Подписаться</div>
+
+                                <div class="info-bar__date">Вт, 9:03</div>
+                            </div>
+                            <div class="pop-up__answer-text">К сожалению, у меня нет возможности ответить Вам на канале
+                                «Россия 24», просто потому, что людей с моей точкой зрения на такие каналы не пускают.
+                                Там показывают только тех, кто разделяет Вашу позицию. Видимо, поэтому Вам и приходится
+                                общаться с экраном, а не с живым Макаревичем, Собчак или кем-то другим в студии.<br><br>
+                                При этом мое приглашение встретиться с Вами в прямом эфире моей программы «Собчак живьем»
+                                остается в силе. Я знаю, что Вы человек в себе уверенный, и мы вполне могли бы поговорить
+                                уже в режиме живой беседы, а не актерского монолога. Но пока — пишу Вам ответ здесь.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="backgr-pop-up" id="backgr-pop-up"></div>
+            </div>
+
+        </div>
+        <div class="dark-layer" id="dark-layer" onclick="showSearchForm()"></div>
+
+    </div>
+</body>
+</html>
